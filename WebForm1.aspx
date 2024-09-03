@@ -1,0 +1,144 @@
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm1.aspx.vb" Inherits="DBCrud.WebForm1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Cadastro de Empresa</title>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div>
+                <h1 class="display-3 text-center">Cadastro</h1>
+            </div>
+            <div class="col-md-8">
+                <!-- Formulário ASP.NET encapsulando todos os campos -->
+                <form id="cadastroempresa" runat="server">
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="razaoSocial" runat="server" placeholder="Razão Social" />
+                        <label for="razaoSocial">Razão Social</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="representante" runat="server" placeholder="Representante" />
+                        <label for="representante">Representante</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="nomeFantasia" runat="server" placeholder="Nome Fantasia" />
+                        <label for="nomeFantasia">Nome Fantasia</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="apelido" runat="server" placeholder="Apelido" />
+                        <label for="apelido">Apelido</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="cnpj" runat="server" placeholder="CNPJ" />
+                        <label for="cnpj">CNPJ</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="cep" runat="server" placeholder="CEP" />
+                        <label for="cep">CEP</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="endereco" runat="server" placeholder="Endereço" />
+                        <label for="endereco">Endereço</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="bairro" runat="server" placeholder="Bairro" />
+                        <label for="bairro">Bairro</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="cidade" runat="server" placeholder="Cidade" />
+                        <label for="cidade">Cidade</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:DropDownList CssClass="form-select" ID="uf" runat="server">
+                            <asp:ListItem Value="AC">AC</asp:ListItem>
+                            <asp:ListItem Value="AL">AL</asp:ListItem>
+                            <asp:ListItem Value="AP">AP</asp:ListItem>
+                            <asp:ListItem Value="AM">AM</asp:ListItem>
+                            <asp:ListItem Value="BA">BA</asp:ListItem>
+                            <asp:ListItem Value="CE">CE</asp:ListItem>
+                            <asp:ListItem Value="DF">DF</asp:ListItem>
+                            <asp:ListItem Value="ES">ES</asp:ListItem>
+                            <asp:ListItem Value="GO">GO</asp:ListItem>
+                            <asp:ListItem Value="MA">MA</asp:ListItem>
+                            <asp:ListItem Value="MT">MT</asp:ListItem>
+                            <asp:ListItem Value="MS">MS</asp:ListItem>
+                            <asp:ListItem Value="MG">MG</asp:ListItem>
+                            <asp:ListItem Value="PA">PA</asp:ListItem>
+                            <asp:ListItem Value="PB">PB</asp:ListItem>
+                            <asp:ListItem Value="PR">PR</asp:ListItem>
+                            <asp:ListItem Value="PE">PE</asp:ListItem>
+                            <asp:ListItem Value="PI">PI</asp:ListItem>
+                            <asp:ListItem Value="RJ">RJ</asp:ListItem>
+                            <asp:ListItem Value="RN">RN</asp:ListItem>
+                            <asp:ListItem Value="RS">RS</asp:ListItem>
+                            <asp:ListItem Value="RO">RO</asp:ListItem>
+                            <asp:ListItem Value="RR">RR</asp:ListItem>
+                            <asp:ListItem Value="SC">SC</asp:ListItem>
+                            <asp:ListItem Value="SP">SP</asp:ListItem>
+                            <asp:ListItem Value="SE">SE</asp:ListItem>
+                            <asp:ListItem Value="TO">TO</asp:ListItem>
+                        </asp:DropDownList>
+                        <label for="uf">UF</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="email" runat="server" placeholder="E-mail" TextMode="Email" />
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="confirmarEmail" runat="server" placeholder="Confirmar E-mail" TextMode="Email" />
+                        <label for="confirmarEmail">Confirmar E-mail</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="telefone" runat="server" placeholder="Telefone" />
+                        <label for="telefone">Telefone</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="fax" runat="server" placeholder="Fax" />
+                        <label for="fax">Fax</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="observacao" runat="server" placeholder="Observação" TextMode="MultiLine" Rows="3" />
+                        <label for="observacao">Observação</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="caminhoArquivoContasPagar" runat="server" placeholder="Caminho Arquivo Contas Pagar" />
+                        <label for="caminhoArquivoContasPagar">Caminho Arquivo Contas Pagar</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="caminhoArquivoContasReceber" runat="server" placeholder="Caminho Arquivo Contas Receber" />
+                        <label for="caminhoArquivoContasReceber">Caminho Arquivo Contas Receber</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="nomeArquivoContasPagar" runat="server" placeholder="Nome Arquivo Contas Pagar" />
+                        <label for="nomeArquivoContasPagar">Nome Arquivo Contas Pagar</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="nomeArquivoContasReceber" runat="server" placeholder="Nome Arquivo Contas Receber" />
+                        <label for="nomeArquivoContasReceber">Nome Arquivo Contas Receber</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="matriz" runat="server" placeholder="Matriz" />
+                        <label for="matriz">Matriz</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="emailCobranca" runat="server" placeholder="E-mail Cobrança" TextMode="Email" />
+                        <label for="emailCobranca">E-mail Cobrança</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <asp:TextBox CssClass="form-control" ID="nomeLogo" runat="server" placeholder="Nome Logo" />
+                        <label for="nomeLogo">Nome Logo</label>
+                    </div>
+                    <div class="form-group">
+                        <asp:Button CssClass="btn btn-primary" ID="btnINSERT" runat="server" Text="Inserir" OnClick="btnINSERT_Click" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
