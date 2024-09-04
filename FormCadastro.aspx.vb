@@ -1,10 +1,11 @@
 ﻿Imports System.Data.SqlClient
 Imports WebGrease.Activities
 
-Public Class WebForm1
+Public Class FormCadastro
     Inherits System.Web.UI.Page
 
-    Dim cls_cruddb As New CrudDB
+    ReadOnly cls_cruddb As New CrudDB
+
     Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
     End Sub
@@ -36,7 +37,6 @@ Public Class WebForm1
         Dim operacional As Boolean = Me.operacional.Checked
         Dim tipoTributacao As Integer = If(String.IsNullOrEmpty(Me.tipoTributacao.Text), Nothing, Integer.Parse(Me.tipoTributacao.Text))
         Dim verificaExtrato As Boolean = Me.verificaExtrato.Checked
-        'Dim bussiness As Integer = If(String.IsNullOrEmpty(Me.bussiness.Text), Nothing, Integer.Parse(Me.bussiness.Text))
         Dim codigoTransmissao As String = Me.codigoTransmissao.Text.Trim()
         Dim cancelado As Boolean = Me.cancelado.Checked
 
@@ -79,7 +79,7 @@ Public Class WebForm1
 
         Try
             ' Chama o método para executar a stored procedure
-            cls_cruddb.ExecutarProcedure("Salva_Empresa_SP", args)
+            cls_cruddb.ExecutarProcedure(args)
             lblSuccess.Text = "Empresa inserida com sucesso!" ' Supondo que você tenha um controle Label chamado lblSuccess
         Catch ex As Exception
             ' Exibe uma mensagem de erro se ocorrer uma exceção

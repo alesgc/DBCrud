@@ -1,9 +1,11 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class CrudDB
-    Private connectionString As String = "Password=usepark;Persist Security Info=True;User ID=usepark;Initial Catalog=epark;Data Source=ELVIRA\SQLEXPRESS"
+    Private ReadOnly connectionString As String = "Password=usepark;Persist Security Info=True;User ID=usepark;Initial Catalog=epark;Data Source=ELVIRA\SQLEXPRESS"
 
-    Public Sub ExecutarProcedure(operation As String, args As Dictionary(Of String, Object))
+    Public Function ExecutarProcedure(args As Dictionary(Of String, Object))
+        Dim dt As New DataTable()
+
         Using connection As New SqlConnection(connectionString)
             Using command As New SqlCommand("Salva_Empresa_SP", connection)
                 command.CommandType = CommandType.StoredProcedure
@@ -13,9 +15,15 @@ Public Class CrudDB
                     command.Parameters.AddWithValue(kvp.Key, kvp.Value)
                 Next
 
+                Using adapter As New SqlDataAdapter(command)
+                    adapter.Fill(dt)
+                End Using
+
                 connection.Open()
-                command.ExecuteNonQuery()
+                'command.ExecuteNonQuery()
             End Using
         End Using
-    End Sub
+
+        Return dt
+    End Function
 End Class

@@ -11,16 +11,16 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class WebForm1
+Partial Public Class FormCadastro
 
     '''<summary>
-    '''Controle cadastroempresa.
+    '''Controle formCadastro.
     '''</summary>
     '''<remarks>
     '''Campo gerado automaticamente.
     '''Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
     '''</remarks>
-    Protected WithEvents cadastroempresa As Global.System.Web.UI.HtmlControls.HtmlForm
+    Protected WithEvents formCadastro As Global.System.Web.UI.HtmlControls.HtmlForm
 
     '''<summary>
     '''Controle razaoSocial.
@@ -183,15 +183,6 @@ Partial Public Class WebForm1
     '''Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
     '''</remarks>
     Protected WithEvents verificaExtrato As Global.System.Web.UI.WebControls.CheckBox
-
-    '''<summary>
-    '''Controle bussiness.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents bussiness As Global.System.Web.UI.WebControls.CheckBox
 
     '''<summary>
     '''Controle codigoTransmissao.

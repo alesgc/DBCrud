@@ -1,24 +1,46 @@
-﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="WebForm1.aspx.vb" Inherits="DBCrud.WebForm1" %>
+﻿<%@ Page Language="vb" AutoEventWireup="false" CodeBehind="FormEdit.aspx.vb" Inherits="DBCrud.FormEdit" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Cadastro de Empresa</title>
     <link href="Content/bootstrap.css" rel="stylesheet" />
+    <title></title>
+    <style>
+        .table-responsive-container {
+            max-width: 1000px; /* Largura máxima da tabela */
+            max-height: 900px; /* Altura máxima da tabela */
+            overflow-y: auto; /* Barra de rolagem vertical */
+            overflow-x: auto; /* Barra de rolagem horizontal */
+            align-content: center;
+        }
+
+        header {
+            background-color: #f8f9fa; /* Cor de fundo do cabeçalho */
+            padding: 20px; /* Espaçamento interno */
+            border-bottom: 1px solid #dee2e6; /* Borda inferior */
+            text-align: center; /* Alinhamento do texto */
+        }
+
+            header h1 {
+                margin: 0; /* Remover margem do título */
+                font-size: 2rem; /* Tamanho da fonte do título */
+                color: #343a40; /* Cor do texto */
+            }
+    </style>
 </head>
-<body>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div>
-                <h1 class="display-3 text-center">Cadastro</h1>
-            </div>
-            <div class="col-md-8">
-                <!-- Formulário ASP.NET encapsulando todos os campos -->
-                <form id="cadastroempresa" runat="server">
+<body class="container my-4">
+    <header>
+        <h1>Consulta de Clientes</h1>
+        <p>Visualize as informações detalhadas de clientes cadastrados</p>
+    </header>
+    <main class="table-responsive-container border">
+        <div class="container mt-5 ">
+            <div class="row justify-content-center">
+                <form id="formEdit" runat="server">
                     <div class="form-floating mb-3">
-                        <asp:TextBox CssClass="form-control" ID="razaoSocial" runat="server" placeholder="Razão Social"/>
+                        <asp:TextBox CssClass="form-control" ID="razaoSocial" runat="server" placeholder="Razão Social" />
                         <label for="razaoSocial">Razão Social</label>
                     </div>
                     <div class="form-floating mb-3">
@@ -83,7 +105,7 @@
                     </div>
                     <div class="form-floating mb-3">
                         <asp:TextBox CssClass="form-control" ID="confirmarEmail" runat="server" placeholder="Confirmar E-mail" />
-                        <label for="confirmarEmail">E-mail</label>
+                        <label for="confirmarEmail">Confirmar E-mail</label>
                     </div>
                     <div class="form-floating mb-3">
                         <asp:TextBox CssClass="form-control" ID="telefone" runat="server" placeholder="Telefone" />
@@ -117,10 +139,6 @@
                         <asp:CheckBox CssClass="form-check-input" ID="verificaExtrato" runat="server" />
                         <label class="form-check-label" for="verificaExtrato">Verifica Extrato</label>
                     </div>
-                    <div class="form-floating mb-3">
-                       <!-- <asp:CheckBox CssClass="form-control" ID="bussiness" runat="server" placeholder="Bussiness" />
-                        <label for="bussiness">Bussiness</label>
-                    </div> -->
                     <div class="form-floating mb-3">
                         <asp:TextBox CssClass="form-control" ID="codigoTransmissao" runat="server" placeholder="Código de Transmissão" />
                         <label for="codigoTransmissao">Código de Transmissão</label>
@@ -157,8 +175,9 @@
                         <asp:TextBox CssClass="form-control" ID="nomeLogo" runat="server" placeholder="Nome Logo" />
                         <label for="nomeLogo">Nome Logo</label>
                     </div>
-                    <div class="form-group">
-                        <asp:Button CssClass="btn btn-primary" ID="btnINSERT" runat="server" Text="Inserir" OnClick="btnINSERT_Click" />
+                    <div class="form-group d-flex justify-content-between col-10 col-md-7 col-lg-6 mx-auto">
+                        <asp:Button CssClass="btn btn-primary" ID="btnUPDATE" runat="server" Text="Salvar Alterações" />
+                        <asp:Button CssClass="btn btn-primary" ID="btnDropModify" runat="server" Text="Descartar Alterações" />
                     </div>
                     <div class="form-group">
                         <asp:Label ID="lblError" CssClass="text-danger" runat="server" />
@@ -169,6 +188,10 @@
                 </form>
             </div>
         </div>
-    </div>
+    </main>
+    <!--Jquery-->
+    <script src="scripts/jquery-3.7.0.min.js"></script>
+    <!--JavaScript Bootstrap-->
+    <script src="scripts/bootstrap.js"></script>
 </body>
 </html>
