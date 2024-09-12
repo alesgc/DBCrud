@@ -11,7 +11,7 @@ Option Strict On
 Option Explicit On
 
 
-Partial Public Class TablePaginater
+Partial Public Class GridV
 
     '''<summary>
     '''Controle form1.
@@ -30,13 +30,4 @@ Partial Public Class TablePaginater
     '''Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
     '''</remarks>
     Protected WithEvents GridView1 As Global.System.Web.UI.WebControls.GridView
-
-    '''<summary>
-    '''Controle DataPager1.
-    '''</summary>
-    '''<remarks>
-    '''Campo gerado automaticamente.
-    '''Para modificar, mova a declaração de campo do arquivo de designer a um arquivo code-behind.
-    '''</remarks>
-    Protected WithEvents DataPager1 As Global.System.Web.UI.WebControls.DataPager
 End Class

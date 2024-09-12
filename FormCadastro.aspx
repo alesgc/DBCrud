@@ -174,7 +174,7 @@
                     <asp:TextBox CssClass="form-control" ID="nomeLogo" runat="server" placeholder="Nome Logo" />
                     <label for="nomeLogo">Nome Logo</label>
                 </div>
-                <div class="form-group justify-content-center">
+                <div class="form-group d-flex justify-content-center col-5 col-md-7 col-lg-3 mx-auto">
                     <asp:Button CssClass="btn btn-primary" ID="btnINSERT" runat="server" Text="Cadastrar" OnClick="btnINSERT_Click" />
                 </div>
                 <div class="form-group">

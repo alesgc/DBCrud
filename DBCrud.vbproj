@@ -149,6 +149,7 @@
     <Content Include="FormGenerico.aspx" />
     <Content Include="FormViews.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="GridV.aspx" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />
@@ -258,6 +259,13 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="GridV.aspx.designer.vb">
+      <DependentUpon>GridV.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GridV.aspx.vb">
+      <DependentUpon>GridV.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -337,6 +345,7 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.7.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.7.0.min.map" />
+    <Content Include="tablePaginater.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
